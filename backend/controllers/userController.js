@@ -8,7 +8,7 @@ exports.registerUser = async (req, res) => {
 
         const uniqueId = uuidv4();
 
-        const qrData = `http://192.168.1.5:5173/${uniqueId}`;
+        const qrData = `https://smart-vehicle-contact-system.vercel.app/${uniqueId}`;
 
         const qrImage = await QRCode.toDataURL(qrData);
 

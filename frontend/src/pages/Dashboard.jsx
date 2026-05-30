@@ -116,14 +116,12 @@ function Dashboard() {
 
               <img src={vehicle.qrImage} alt="QR" style={{ width: "200px" }} />
 
-              <p className="mt-2">http://localhost:5173/{vehicle.uniqueId}</p>
+              <p className="mt-2">{vehicle.qrCode}</p>
 
               <button
                 className="btn btn-outline-primary"
                 onClick={() => {
-                  navigator.clipboard.writeText(
-                    `http://localhost:5173/${vehicle.uniqueId}`,
-                  );
+                  navigator.clipboard.writeText(vehicle.qrCode);
                   alert("Copied!");
                 }}
               >

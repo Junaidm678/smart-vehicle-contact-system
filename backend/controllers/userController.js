@@ -9,6 +9,7 @@ exports.registerUser = async (req, res) => {
         const uniqueId = uuidv4();
 
         const qrData = `https://smart-vehicle-contact-system.vercel.app/${uniqueId}`;
+        console.log("QR DATA GENERATED:", qrData);
 
         const qrImage = await QRCode.toDataURL(qrData);
 

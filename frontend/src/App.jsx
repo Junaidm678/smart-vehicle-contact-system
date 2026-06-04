@@ -11,11 +11,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route path="/:id" element={<Home />} />
         <Route path="/" element={<Home1 />} />

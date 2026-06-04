@@ -89,10 +89,10 @@ exports.getEmergencyContact = async (req, res) => {
 exports.getMyVehicle = async (req, res) => {
   try {
     const user = await User.findOne({
-      userId: req.user.userId   // from token
+      userId: req.user.userId   
     });
 
-    res.json(user); // null if not registered
+    res.json(user); 
 
   } catch (err) {
     res.status(500).json({ error: err.message });

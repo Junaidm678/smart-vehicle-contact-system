@@ -6,6 +6,7 @@ import Emergency from "./pages/Emergency";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ProtectedRoute from "./pages/ProtectedRoute";
 import Home1 from "./pages/Home1";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
@@ -25,7 +26,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/contact/:id" element={<ContactOwner />} />
         <Route path="/emergency/:id" element={<Emergency />} />
         <Route path="/register-vehicle" element={<Register />} />
